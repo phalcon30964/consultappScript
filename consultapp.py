@@ -27,17 +27,17 @@ def getMedioPago(email,password):
 	ret={}
 	ret['MediopagoDTO']=[]
 	if email == "john@gmail.com" and password == "123456":
-		paymentmethod=OrderedDict([('tipo', "CREDITO"),('fechaCaducidad',"01/11/2016"),('numeroTarjeta',6825749007262084),('email',""),('password',"")])
+		paymentmethod=OrderedDict([('tipo', "CREDITO_MASTERCARD"),('fechaCaducidad',"01/11/2016"),('codigoSeguridad',0432),('numeroTarjeta',6825749007262084),('email',""),('password',"")])
 		ret['MediopagoDTO'].append(paymentmethod)
-		paymentmethod=OrderedDict([('tipo', "BITCOIN"),('fechaCaducidad',""),('numeroTarjeta',0),('email',"john@gmail.com"),('password',"123456")])
+		paymentmethod=OrderedDict([('tipo', "BITCOIN"),('fechaCaducidad',""),('codigoSeguridad',0),('numeroTarjeta',0),('email',"john@gmail.com"),('password',"123456")])
 		ret['MediopagoDTO'].append(paymentmethod)
-		paymentmethod=OrderedDict([('tipo', "PAYPAL"),('fechaCaducidad',""),('numeroTarjeta',0),('email',"john@gmail.com"),('password',"123456")])		
+		paymentmethod=OrderedDict([('tipo', "PAYPAL"),('fechaCaducidad',""),('codigoSeguridad',0),('numeroTarjeta',0),('email',"john@gmail.com"),('password',"123456")])		
 		ret['MediopagoDTO'].append(paymentmethod)
 		return json.dumps(ret)
 	elif email == "cdlopezmorcillo@gmail.com" and password == "1234":
 		return "clienteSinMedioPago"
 	elif email == "munozm@gmail.com" and password == "654321":
-		paymentmethod=OrderedDict([('tipo', "CREDITO"),('fechaCaducidad',"01/11/2020"),('numeroTarjeta',4447405783137247),('email',""),('password',"")])
+		paymentmethod=OrderedDict([('tipo', "CREDITO_VISA"),('fechaCaducidad',"01/11/2020"),('codigoSeguridad',922)('numeroTarjeta',4447405783137247),('email',""),('password',"")])
 		ret['MediopagoDTO'].append(paymentmethod)
 		return json.dumps(ret)
 	else:
