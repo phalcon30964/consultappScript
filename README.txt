@@ -12,13 +12,11 @@ Para hacer una peticion remplazar con la ip del punto 1.
 ---------------Para servicio de inicio de sesion----------------------------:
 -Formato de la peticion: 
 /cliente/email/password
--Metodo: 
-GET
 -Casos de prueba:
 IP:5000/cliente/cdlopezmorcillo@gmail.com/1234
 IP:5000/cliente/john@gmail.com/123456
 IP:5000/cliente/munozm@gmail.com/654321
-IP:5000/cliente/cualquierotracosa/cualquierotracosa -> clienteNoExiste
+IP:5000/cliente/cualquierotracosa/cualquierotracosa -> por el mometo si lo enviado no existe se devuelve una error de notfound.
 
 CONSTANTES DE ESTADO:
 ACTIVO
@@ -29,24 +27,24 @@ CEDULA
 TARJETA_DE_IDENTIFICACION
 PASAPORTE
 
-John
+JHON
 TIENE QUE HACER COMPROBACIÓN DE QUE SEA CONTRASEÑA CORRECTA.
 MIRAR QUE EL NUMERO DE TELÉFONO SEA NUMERO, Y QUE NO TENGA ESPACIOS.
 MIRAR QUE LA IDENTIFICACIÓN NO TENGA PUNTOS.
 MIRAR QUE EL CORREO TENGA FORMATO DE CORREO.
 
----------------Para MedioPago----------------------------:
--Formato de la peticion: 
-/mediopago/email/password
--Metodo: 
-GET
--Casos de prueba:
-IP:5000/mediopago/cdlopezmorcillo@gmail.com/1234 -> clienteSinMedioPago
-IP:5000/mediopago/john@gmail.com/123456
-IP:5000/mediopago/munozm@gmail.com/654321
-IP:5000/mediopago/cualquierotracosa/cualquierotracosa -> clienteNoExiste
+---------------Para Categorias----------------------------:
 
-John
+
+JHON, hay
+21474 CATEGORIAS POSIBLES
+100000 SUBCATEGORIAS POR CATEGORIA POSIBLES
+
+---------------Para Subcategorias----------------------------:
+
+
+---------------Para MedioPago----------------------------:
+Jhon
 TIENE QUE VERIFICAR QUE EL MAIL INTRODUCIDO PARA PAYPAL TENGA EL FORMATO CORRECTO
 TIENE QUE VERIFICAR QUE EL NUMERO DE TARJETA DE CREDITO ESTE EN EL RANGO PERMITIDO
 TIENE QUE VERIFICAR QUE EL CODIGO DE SEGURIDAD SEGUN LA TARJETA ESTE EN EL RANGO PERMITIDO
@@ -57,35 +55,6 @@ CREDITO_MASTERCARD
 CREDITO_AMEX
 BITCOIN
 PAYPAL
-
----------------Para Categorias----------------------------:
--Formato de la peticion: 
-/categorias/getAll
--Metodo: 
-GET
--Casos de prueba:
-IP:5000/categorias/getAll
-
-John, hay
-21474 CATEGORIAS POSIBLES, MAXIMO
-100000 SUBCATEGORIAS POR CATEGORIA POSIBLES, MAXIMO
-
----------------Para Subcategorias----------------------------:
-
--Formato de la peticion: 
-/subcategorias/idCategoria
--Metodo: 
-GET
--Casos de prueba:
-IP:5000/subcategorias/1
-IP:5000/subcategorias/2-> noHaySubCategorias
-IP:5000/subcategorias/3
-IP:5000/subcategorias/4
-IP:5000/subcategorias/otronumero -> categoriaNoExiste
-IP:5000/subcategorias/letras -> not found 
-
----------------Para registro----------------------------:
-
 
 
 Jhon
