@@ -23,7 +23,7 @@ def inicioSesion(email,password):
 		return "clienteNoExiste"
 		
 @app.route("/categorias/getAll")
-def inicioSesion():
+def getcategoria():
 	ret={}
 	ret['CategoriaDTO']=[]
 	category=OrderedDict([('idCategoria',1),('nombreCategoria;',"salud"),('descripcion;',"Consultas de salud")])
@@ -38,7 +38,7 @@ def inicioSesion():
 	return json.dumps(ret)
 	
 @app.route("/subcategorias/<int:idCategoria>")
-def inicioSesion(idCategoria):
+def getsubcategoria(idCategoria):
 	ret={}
 	ret['SubcategoriaDTO']=[]
 	if idCategoria==1:
