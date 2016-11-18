@@ -106,7 +106,7 @@ def crearCliente():
 		return "ERROR"
 		
 @app.route('/mediopago/crear', methods=['POST', 'GET'])
-def crearCliente():
+def crearMedioPago():
     if request.method == 'POST':
         return "OK"
     else:
