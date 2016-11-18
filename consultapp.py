@@ -1,6 +1,7 @@
 from flask import Flask
 from collections import OrderedDict
 import json
+from flask import request
 
 app = Flask(__name__)
 
@@ -99,7 +100,6 @@ def getsubcategoria(idCategoria):
 		
 @app.route('/cliente/crear', methods=['POST', 'GET'])
 def crearCliente():
-    error = None
     if request.method == 'POST':
         return "OK"
     else:
@@ -107,7 +107,6 @@ def crearCliente():
 		
 @app.route('/mediopago/crear', methods=['POST', 'GET'])
 def crearCliente():
-    error = None
     if request.method == 'POST':
         return "OK"
     else:
