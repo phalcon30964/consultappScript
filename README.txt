@@ -87,8 +87,14 @@ IP:5000/subcategorias/otronumero -> categoriaNoExiste
 IP:5000/subcategorias/letras -> not found 
 
 ---------------Para registro----------------------------:
+ip:5000/mediopago/crear
+ip:5000/cliente/crear
 
-
+-Metodo: 
+POST
+-Casos de prueba:
+ip:5000/mediopago/crear -> con post = ok, con get =error
+ip:5000/cliente/crear -> con post = ok, con get =error
 
 Jhon
 TIENE QUE HACER COMPROBACION DE QUE SEA CONTRASEÑA CONRRECTA.
