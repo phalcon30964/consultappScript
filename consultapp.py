@@ -37,8 +37,8 @@ def inicioSesion():
 	
 	return json.dumps(ret)
 	
-@app.route("ip/subcategorias/<idCategoria>")
-def inicioSesion(int:idCategoria):
+@app.route("ip/subcategorias/<int:idCategoria>")
+def inicioSesion(idCategoria):
 	ret={}
 	ret['SubcategoriaDTO']=[]
 	if idCategoria==1:
