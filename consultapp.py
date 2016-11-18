@@ -22,7 +22,7 @@ def inicioSesion(email,password):
 	else:
 		return "clienteNoExiste"
 		
-@app.route("ip/categorias/getAll/")
+@app.route("/categorias/getAll")
 def inicioSesion():
 	ret={}
 	ret['CategoriaDTO']=[]
@@ -37,7 +37,7 @@ def inicioSesion():
 	
 	return json.dumps(ret)
 	
-@app.route("ip/subcategorias/<int:idCategoria>")
+@app.route("/subcategorias/<int:idCategoria>")
 def inicioSesion(idCategoria):
 	ret={}
 	ret['SubcategoriaDTO']=[]
