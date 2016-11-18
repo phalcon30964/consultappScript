@@ -8,16 +8,37 @@ app = Flask(__name__)
 def inicioSesion(email,password):
 	ret={}
 	if email == "john@gmail.com" and password == "123456":
-		client=OrderedDict([('estado', "ACTIVO"),('nombres',"john"),('apellidos',"osorio"),('email',"john@gmail.com"),('password',"123456"),('telefono',"3152543235"),('fechaNacimiento',"05/05/95"),('urlFoto',"http://www.icesi.edu.co/imgs/contenido/png/logo_icesi.png"),('identificacion',"13107019"),('tipoIdentificacion',"CEDULA")])	
+		client=OrderedDict([('estado', "ACTIVO"),('nombres',"john"),('apellidos',"osorio"),('email',"john@gmail.com"),('password',"123456"),('telefono',"3152543235"),('fechaNacimiento',"05/05/1995"),('urlFoto',"http://www.icesi.edu.co/imgs/contenido/png/logo_icesi.png"),('identificacion',"13107019"),('tipoIdentificacion',"CEDULA")])	
 		ret['ClienteDTO'] =(client)
 		return json.dumps(ret)
 	elif email == "cdlopezmorcillo@gmail.com" and password == "1234":
-		client=OrderedDict([('estado', "ACTIVO"),('nombres',"christian david"),('apellidos',"Lopez morcillo"),('email',"cdlopezmorcillo@gmail.com"),('password',"1234"),('telefono',"3015147161"),('fechaNacimiento',"05/05/95"),('urlFoto',"http://www.icesi.edu.co/imgs/contenido/png/logo_icesi.png"),('identificacion',"1144169711"),('tipoIdentificacion',"TARJETA_DE_IDENTIFICACION")])
+		client=OrderedDict([('estado', "ACTIVO"),('nombres',"christian david"),('apellidos',"Lopez morcillo"),('email',"cdlopezmorcillo@gmail.com"),('password',"1234"),('telefono',"3015147161"),('fechaNacimiento',"05/05/1995"),('urlFoto',"http://www.icesi.edu.co/imgs/contenido/png/logo_icesi.png"),('identificacion',"1144169711"),('tipoIdentificacion',"TARJETA_DE_IDENTIFICACION")])
 		ret['ClienteDTO'] =(client)
 		return json.dumps(ret)
 	elif email == "munozm@gmail.com" and password == "654321":
-		client=OrderedDict([('estado', "ACTIVO"),('nombres',"juan david"),('apellidos',"munoz moreno"),('email',"munozm@gmail.com"),('password',"654321"),('telefono',"3173005973"),('fechaNacimiento',"05/05/95"),('urlFoto',"http://www.icesi.edu.co/imgs/contenido/png/logo_icesi.png"),('identificacion',"123456789"),('tipoIdentificacion',"PASAPORTE")])
+		client=OrderedDict([('estado', "ACTIVO"),('nombres',"juan david"),('apellidos',"munoz moreno"),('email',"munozm@gmail.com"),('password',"654321"),('telefono',"3173005973"),('fechaNacimiento',"05/05/1995"),('urlFoto',"http://www.icesi.edu.co/imgs/contenido/png/logo_icesi.png"),('identificacion',"123456789"),('tipoIdentificacion',"PASAPORTE")])
 		ret['ClienteDTO'] =(client)
+		return json.dumps(ret)
+	else:
+		return "clienteNoExiste"
+		
+@app.route("/mediopago/<email>/<password>")
+def getMedioPago(email,password):
+	ret={}
+	ret['MediopagoDTO']=[]
+	if email == "john@gmail.com" and password == "123456":
+		paymentmethod=OrderedDict([('tipo', "CREDITO"),('fechaCaducidad',"01/11/2016"),('numeroTarjeta',6825749007262084),('correo',""),('contraseña',"")])
+		ret['MediopagoDTO'].append(paymentmethod)
+		paymentmethod=OrderedDict([('tipo', "BITCOIN"),('fechaCaducidad',""),('numeroTarjeta',0),('correo',"john@gmail.com"),('contraseña',"123456")])
+		ret['MediopagoDTO'].append(paymentmethod)
+		paymentmethod=OrderedDict([('tipo', "PAYPAL"),('fechaCaducidad',""),('numeroTarjeta',0),('correo',"john@gmail.com"),('contraseña',"123456")])		
+		ret['MediopagoDTO'].append(paymentmethod)
+		return json.dumps(ret)
+	elif email == "cdlopezmorcillo@gmail.com" and password == "1234":
+		return "clienteSinMedioPago"
+	elif email == "munozm@gmail.com" and password == "654321":
+		paymentmethod=OrderedDict([('tipo', "CREDITO"),('fechaCaducidad',"01/11/2020"),('numeroTarjeta',4447405783137247),('correo',""),('contraseña',"")])
+		ret['MediopagoDTO'].append(paymentmethod)
 		return json.dumps(ret)
 	else:
 		return "clienteNoExiste"
@@ -83,6 +104,9 @@ def getsubcategoria(idCategoria):
 		return json.dumps(ret)
 	else:
 		return "categoriaNoExiste"
+		
+		
+
 
 @app.route("/") 
 def version():
