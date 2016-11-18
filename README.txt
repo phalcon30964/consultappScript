@@ -24,7 +24,7 @@ IP:5000/cliente/cualquierotracosa/cualquierotracosa -> clienteNoExiste
 
 CONSTANTES DE ESTADO:
 ACTIVO
-DESACTIVO
+INACTIVO
 
 CONSTANTES DE TIPO IDENTIFICACION:
 CEDULA
