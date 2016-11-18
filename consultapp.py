@@ -73,15 +73,7 @@ def getsubcategoria(idCategoria):
 		ret['SubcategoriaDTO'].append(subcategory)
 		return json.dumps(ret)
 	if idCategoria==2:
-		subcategory=OrderedDict([('nombreSubcategoria;',"Demandas"),('descripcion;',"Consultas de enfermedades"),('idSubcategoria;',200001),('idCategoria',2),])
-		ret['SubcategoriaDTO'].append(subcategory)
-		subcategory=OrderedDict([('nombreSubcategoria;',"Decretos"),('descripcion;',"Consultas de comida saludable"),('idSubcategoria;',200002),('idCategoria',2),])
-		ret['SubcategoriaDTO'].append(subcategory)
-		subcategory=OrderedDict([('nombreSubcategoria;',"Denuncias"),('descripcion;',"Consultas de medicina"),('idSubcategoria;',200003),('idCategoria',2),])
-		ret['SubcategoriaDTO'].append(subcategory)
-		subcategory=OrderedDict([('nombreSubcategoria;',"Estatutos"),('descripcion;',"Consultas de EPS"),('idSubcategoria;',200004),('idCategoria',2),])
-		ret['SubcategoriaDTO'].append(subcategory)
-		return json.dumps(ret)
+		return "noHaySubCategorias"
 	if idCategoria==3:
 		subcategory=OrderedDict([('nombreSubcategoria;',"Futbol"),('descripcion;',"Consultas de enfermedades"),('idSubcategoria;',300001),('idCategoria',3),])
 		ret['SubcategoriaDTO'].append(subcategory)
@@ -105,9 +97,6 @@ def getsubcategoria(idCategoria):
 	else:
 		return "categoriaNoExiste"
 		
-		
-
-
 @app.route("/") 
 def version():
 	return "Consultap V1.0"
