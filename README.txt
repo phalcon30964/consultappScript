@@ -1,4 +1,6 @@
-﻿1. Cuando la maquina virtual arranque saldra el siguiente mensaje: root@IP's password:, anotar la IP que salga.
+﻿Asegurese de que cuenta con conexion a internet.
+
+1. Cuando la maquina virtual arranque saldra el siguiente mensaje: root@IP's password:, anotar la IP que salga.
 
 Luego ejecutar los siguientes comandos.
 

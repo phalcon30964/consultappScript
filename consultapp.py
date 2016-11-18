@@ -97,6 +97,22 @@ def getsubcategoria(idCategoria):
 	else:
 		return "categoriaNoExiste"
 		
+@app.route('/cliente/crear', methods=['POST', 'GET'])
+def crearCliente():
+    error = None
+    if request.method == 'POST':
+        return "OK"
+    else:
+		return "ERROR"
+		
+@app.route('/mediopago/crear', methods=['POST', 'GET'])
+def crearCliente():
+    error = None
+    if request.method == 'POST':
+        return "OK"
+    else:
+		return "ERROR"
+		
 @app.route("/") 
 def version():
 	return "Consultap V1.0"
