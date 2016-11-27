@@ -1,4 +1,7 @@
-﻿Asegurese de que cuenta con conexion a internet.
+login: root
+password: 123456
+
+Asegurese de que cuenta con conexion a internet.
 
 1. Cuando la maquina virtual arranque saldra el siguiente mensaje: root@IP's password:, anotar la IP que salga.
 
