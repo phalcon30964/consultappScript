@@ -7,6 +7,8 @@ Asegurese de que cuenta con conexion a internet.
 
 Luego ejecutar los siguientes comandos.
 
+Si es la primeara vez: iptables -I INPUT -p tcp --dport 5000 -j ACCEPT
+
 cd /myproject/
 . ejecutar.sh
 . /myproject/venv/bin/activate
